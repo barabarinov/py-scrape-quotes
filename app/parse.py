@@ -1,10 +1,10 @@
 import csv
 import time
+from dataclasses import dataclass
 
 import requests
-
 from bs4 import BeautifulSoup
-from dataclasses import dataclass
+
 
 BASE_URL = "https://quotes.toscrape.com/"
 
@@ -63,7 +63,6 @@ def write_quotes_to_csv(quotes: list, output_csv_path: str) -> None:
         newline="",
         encoding="utf-8"
     ) as file:
-
         writer = csv.writer(file)
         writer.writerow(["text", "author", "tags"])
 
